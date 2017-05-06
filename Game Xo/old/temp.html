@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>
+            איקס עיגול - ב1
+        </title>
+        <link href="_css/style.css"/>
+        <style>
+            main{
+                background-color: red;
+                padding-bottom: 100px;
+				box-sizing: border-box;
+				
+            }
+            .container{
+                display: flex;
+				width: 500px;
+            }
+			#board{
+				border: 1px solid black;
+				display: flex;
+				background-color: yellow;
+				flex-wrap: wrap;
+				box-sizing: border-box;
+				
+			}
+            .box{
+                background-color: blue;
+/*                flex: 1;*/
+                border: 1px solid black;
+				box-sizing: border-box;
+				
+            }
+        </style>
+        <script src="_js/gameXigul.js" ></script>
+    </head>
+    <body onload="init()">
+        <main class="game_Board" id="board">
+            
+            
+        </main>
+        <div class="container">
+            <div class="box" width="200px" height="200px"></div>
+            <div class="box" width="200px" height="200px"></div>
+            <div class="box"></div>
+        </div>
+    </body>
+</html>
