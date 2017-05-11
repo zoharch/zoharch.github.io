@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<script>
+			
+						var winner='',
+				iDimY = 3,
+				iDimX = 3;			
+			
+			function init() {
+				var aGameMap=[];			
+				for (var i = 1; i <= iDimX; i++) {
+					aGameMap[i] = [];
+				}
+				
+				for (var i = 1; i <= iDimY; i++) {
+					for (var k = 1; k <= iDimX; k++) {
+						aGameMap[i][k] = '';
+					}
+				}
+				
+				aGameMap[1][1] = '1';
+				aGameMap[2][2] = '1';
+				document.write(aGameMap);
+				winner = direction(2,-1,2,-1,'1',2,2);
+//				document.write('<br>');
+//				document.write(winner);
+//				
+			}
+			
+			
+			function direction(aGameMap,y, yDir, x, xDir,str,newY,newX) {
+				newY = newY + yDir;
+				newX = newX + xDir;
+				if ((0 < newY <= iDimY) && (0 < newX <= iDimX)) {
+					if (aGameMap[newY][newX] == aGameMap[y][x]) {
+						str += aGameMap[newY][newX];
+						str = direction(aGameMap,y, yDir, x, xDir,str,newY,newX);
+						}
+				}
+				return str;
+			}
+
+	
+		</script>
+	</head>
+	<body onload="init();"></body>
+</html>

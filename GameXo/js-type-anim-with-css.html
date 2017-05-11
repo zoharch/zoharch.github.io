@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<style>
+			.type{
+				font-size: 1rem;
+				width: 45rem;
+				white-space: nowrap;
+				overflow: hidden;
+				animation: typing 8s steps(60, end);
+			}
+
+			@keyframes typing {
+				from { width: 0 ;}
+			}
+		</style>
+		<script>
+			window.onload = init;
+			function init() {
+				document.getElementById('btn').addEventListener("click",btnClicked);
+				btn.innerHTML = "Start the effect !"
+			}
+			function btnClicked() {
+				var p = document.getElementById("p2");
+				if (!p.className) {
+					p.className = "type";
+					this.innerHTML = "Click to stop the effect !";
+				} else {
+					this.innerHTML = "Start the effect !";
+					p.className = "";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="container">
+				<p id="p1" class="type">This text has an animation only with css</p>
+			<p id="p2" class="">This text animation is controled with js and css by adding or removing the related class for the animation, and css does the animtion, not js !!.</p>
+			<button id="btn"></button>
+		</div>
+	</body>
+</html>
