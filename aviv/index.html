@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>
+            איקס עיגול - ב1
+        </title>
+        <link href="style.css" rel="stylesheet"/>
+        <script src="gameXigul.js" ></script>
+		<script src="direction.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>
+                 איקס עיגול 
+            </h1>
+			<div id="winnerContainer">
+				<p id ="winner">ניצחון !!!</p>
+			</div>
+			<select id="players" class='nav'>
+				<option value='233'>שני שחקנים</option>
+				<option value='355'>שלושה שחקנים</option>
+				<option value='477'>ארבעה שחקנים</option>
+				<option value='599'>חמישה שחקנים</option>
+			</select>
+			<p class="nav"></p>
+			<button class="nav" id="newGame">בא נשחק</button>
+        </header>
+        <article>
+            <main class="game_Board" id="board"></main>
+            <img id="winnerGif" src="giphy.gif"/>
+        </article>
+        <footer>
+        <a href="index.html"><img src="_img/home.png"/></a>
+        </footer>
+    </body>
+</html>
