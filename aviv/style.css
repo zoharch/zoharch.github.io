@@ -1,0 +1,190 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+    box-sizing: border-box;
+    background-color: #bbb;
+    direction: rtl;
+    font-family:Arial, "Helvetica Neue", Helvetica, sans-serif;
+    /* dont allow select a text in double click */
+     -webkit-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -ms-user-select: none;
+}
+/*  ------------------------------- Header ------------ */
+header{
+    background-color: red;
+    height: 20vh;
+    text-align: center;
+	position: relative;
+}
+
+header select {
+	background: yellow;
+	font-size: 3rem;
+}
+
+h1{
+    margin: 0;
+    padding-bottom: 1rem;
+}
+
+.nav{
+	float: right;
+	margin-right: 50px;
+}
+
+.nav:visited,
+.nav:link{
+    background-color: #00ff00;
+    transition: background-color 0.5s, border 0.5s;
+    text-decoration:none;
+
+}
+button:hover, .nav:hover,
+button:active, .nav:active{
+    background-color: #00ff00;
+    text-decoration:none;
+    cursor:pointer;
+}
+
+button{
+    background:radial-gradient(#f0f, #f0f,#0ff,#0ff);
+	color: yellow;
+    border-radius:2px;
+    box-shadow:0 0 0 5px #090;
+    outline: 0px;
+/*    display:table;*/
+    font-weight:bold;
+    margin:0 auto;
+    width: 3.5em;
+	height: 3.5em;
+    border-radius: 50%;
+    font-size: 1em;
+    border: 2px solid #000;
+    animation: buttonAnim 2s infinite;
+	overflow: auto;
+	float: right;
+	margin-right: 50px;
+}
+
+@keyframes buttonAnim {
+    0%, 50%, 90% {
+        transform:rotate(0deg);
+    }
+    60% {
+        transform:rotate(5deg) scale(1);
+    }
+    70% {
+        transform:rotate(-5deg) scale(0.97);
+    }
+    80% {
+        transform:rotate(5deg) scale(1.05);
+    }
+}
+/* ---------------------------Main game board ---------------------- */
+section{
+    display: flex;
+}
+
+article {
+    display: flex;
+    position: relative;
+    height: 70vh;
+	text-align: center;
+}
+aside {
+    flex: 1;
+    z-index: 1;
+}
+.player1{
+    background-color: #00AAFF;
+}
+.player2{
+    background-color: #00FF00;
+    flex: 1;
+}
+
+.game_Board{
+    width: 33vw;
+	z-index: 2;
+    position: absolute;
+    top:1.8rem;
+    left:50%;
+    transform: translate(-50%,0);
+    display: flex;
+    flex-wrap: wrap;
+	box-sizing: border-box;
+	direction: ltr;
+}
+.box{
+	background-color: #fff;
+	border: 1px solid black;
+	box-sizing: border-box;
+	z-index: 3;
+	font-size: 1.5rem;
+}
+.box:hover {
+	background-color: #00AAff;
+}
+.marked:hover,
+.marked:active{
+	background-color: #fff;
+}
+
+#winnerContainer{
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%,0);
+	width: 8rem;
+	direction: rtl;
+	text-align: right;
+	margin: 0 auto;
+	visibility: hidden;
+}
+.imganim{
+	margin: 0;
+	z-index: 5;
+	animation: posanim;
+	animation-duration: 5s;
+}
+
+@keyframes posanim{ 
+	0% {top:10%;   left: 10%;}
+	25% {top:10%;  left: 60%;}
+	50% {top:60%; left: 60%; transform: rotate(90deg);}
+	51% {top:60%; left: 60%; transform: rotate(90deg);}
+	52% {top:60%; left: 60%; transform: rotate(90deg);}
+	53% {top:60%; left: 60%; transform: rotate(90deg);}
+	75% {top:60%; left: 10%;}
+	100% {top:10%; left: 10%;}
+} 
+/*  ------------------------------- Win ------------ */
+img{
+    height: 40vh;
+    position: absolute;
+    top:1.8rem;
+    left: 50%;
+    transform: translate(-50%,0);
+    z-index: 5;
+    visibility: hidden;
+}
+
+/*  ------------------------------- footer ------------ */
+footer{
+    background-color: red;
+    height: 10vh;
+    text-align: center;
+}
+footer a{
+	font-size: 0.5rem;
+}
+footer img {
+    visibility: hidden;
+	outline: 0;
+	margin: 20px auto;
+    flex: 1;
+    width: 5vw;
+    animation: buttonAnim 2s infinite;
+}
