@@ -1,0 +1,77 @@
+header {
+    height: 75px;
+    background:  url(banner_small.jpg) no-repeat;
+}
+
+header a.logo {
+    width: 105px;
+    height: 40px;
+    top: 16px;
+    right: 15px;
+    background-image: url(logo_small.png);
+}
+
+article {
+    padding:  20px 20px 10px 20px;
+}
+
+nav {
+    position: static;
+    padding: 10px 0;
+    background-color: #515673;
+}
+
+nav a {
+    display: block;
+    color: #a6abc5;
+    margin:  15px;
+    padding: 9px;
+    border: 1px solid #a6abc5;
+    background: url(mobile_link_arrow.png) no-repeat right center;
+}
+
+nav a:hover {
+    color: #fff;
+    background-color: rgba(255,255,255,0.15);
+}
+
+.promo_container {
+    padding: 0;
+}
+
+.promo_container .promo {
+    width: auto;
+    float: none;
+    padding: 10px 0 0 0;
+    background-position: 20px 13px;
+    border-top: 1px solid #ccc;
+}
+
+.promo_container .promo .contect {
+    padding: 0 20px 5px 90px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

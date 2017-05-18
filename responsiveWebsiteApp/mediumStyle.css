@@ -1,0 +1,25 @@
+header {
+    height: 200px;
+    background:  url(img/banner_medium.jpg) no-repeat;
+}
+header a.logo {
+    width: 115px;
+    height: 70px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-image: url(img/logo_medium.png);
+}
+nav {
+/*    position: absolute; already inside general styls */
+    top: 200px;
+}
+.promo_container {
+    padding:  0 20px 15px 20px;
+}
+.pro_container .promo {
+    background-position:  0 0;
+}
+.pro_container .promo .content {
+    padding: 70px 30px 0 0;
+}
