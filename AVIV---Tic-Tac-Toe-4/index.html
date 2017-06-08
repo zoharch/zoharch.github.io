@@ -1,0 +1,75 @@
+<!DOCTYPE html5>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>AI X - O</title>
+		<!-- Jquery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<!-- BootStrap -->
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<!-- My STYLE -->
+		<style>
+		* {
+			box-sizing:border-box;
+		}
+		canvas,#gameBoard {
+			margin:0;
+			padding:0;
+		}
+		#gameBoard {
+			position: relative;
+		}
+		canvas {
+			position: absolute; 
+		}
+		#msg,#btn2,
+		#btn3,#modTitle {
+			direction: rtl;
+			}
+		.fade {
+	   		opacity: 0;
+	   		-webkit-transition: opacity 2.25s linear;
+			-moz-transition: opacity 2.25s linear;
+			-ms-transition: opacity 2.25s linear;
+        	-o-transition: opacity 2.25s linear;
+			transition: opacity 2.25s linear;
+			}
+		</style>
+		<!-- My scripts -->
+		<script src="js/UI.js"></script>
+		<script src="js/gameLogic.js"></script>
+		<script src="js/AI.js"></script>
+        <script src="js/canvas.js"></script>
+	</head>
+	<body id="bdy" class="container">
+    	<div id="gameBoard" class="row"></div>
+        
+        <div id="GameModal" class="modal fade in">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 id="modTitle" class="modal-title">המשחק הסתיים</h5>
+                <button id="btn1" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p id="msg">Modal body text goes here.</p>
+              </div>
+              <div class="modal-footer">
+                <button id="btn2" type="button" class="btn btn-primary">משחק חדש</button>
+                <button id="btn3" type="button" class="btn btn-secondary" data-dismiss="modal">יציאה</button>
+              </div>
+            </div>
+          </div>
+        </div>
+	</body>
+</html>
