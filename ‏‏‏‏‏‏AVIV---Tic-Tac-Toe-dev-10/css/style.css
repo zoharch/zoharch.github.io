@@ -45,7 +45,10 @@ td {
 	position: absolute;
 	top: 0;
 	left: 0;
-	background: #00f url("/img/Yellow_icon.png") no-repeat center;
+	background: #00f;
+	background-image: url("/img/Yellow_icon.png");
+	background-repeat: no-repeat;
+	background-position: center;
 	background-size: auto 100%;
 	width: 100%;
 	height: 100%;
