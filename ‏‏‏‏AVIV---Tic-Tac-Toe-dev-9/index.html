@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+         <meta charset="utf-8">
+  		 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+         <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"> 
+		 <title>איקס עיגול</title>
+		<!-- BootStrap 4 css -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+	</head>
+	<body id="bdy">
+	<!-- Navigation -->
+<nav id="nav" class="navbar navbar-toggleable-md navbar-light bg-faded">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+       	aria-expanded="false"   aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  				<table>
+					<tr>
+						<td id="heartTd">
+							<span id="hearts" ></span>
+						</td>
+						<td id="progressTd" rowspan="2">
+							<span id="level"></span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							
+<div id="progressContainer" class="progress align-middle" style="display:inline-block; width: 300px">
+	<div id="sucessProgress" class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+		<span ><span id="id_progress_text"></span> 	לשלב הבא</span>
+	</div>
+</div>
+						</td>
+					</tr>
+				</table>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto ">
+          <li  class="nav-item">
+			<button id="idAiSelect" class="btn btn-outline-success active" type="button" aria-pressed="true">לשחק מול המחשב </button>
+          </li>
+          <li class="nav-item">
+			<button id="idFreind" class="btn btn-outline-success " type="button" aria-pressed="false">לשחק מול חבר </button>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">הסברים</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">צור קשר</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">שתף</a>
+          </li>      
+        </ul>
+      </div>
+  </nav>
+<!-- ******************************************************************** -->
+		<div id="gameBoard" class="row"></div> 
+		<!-- here comes gamcell div from js -->
+		<div id="AIboard" class="row"></div>
+<!--My Modal -->
+<div id="GameModal" class="row" role="dialog" aria-labelledby="idModalLabel" aria-hidden="true">
+	<h1 id="circle_h1">המשחק הסתיים</h1>
+	<h5 id="msg"></h5>
+<!-- ******************************************************************** -->        
+		<div id="HeartCopy"></div>
+		<div id="ProgressCopy"></div>
+<!-- ******************************************************************** --> 	
+	<button id="newGame" type="button" class="btn btn-primary"> ? רוצה לשחק שוב </button>
+</div>
+		
+<!-- BootStrap 4 and Jquery -->       
+<!--    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>-->
+		
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous">
+</script>
+<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>	
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<!-- My STYLE -->
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<!-- My scripts -->
+<script src="js/UI.js"></script>
+<script src="js/gameLogic.js"></script>
+<script src="js/AI.js"></script>
+<script src="js/canvas.js"></script>
+<script src="js/aiMaster.js"></script>
+<script src="js/minimax.js"></script>
+	</body>
+</html>
