@@ -16,14 +16,14 @@
 <table id="indicators" style = "visibility: hidden">
 	<tr>
 		<td id="heartTd">
-			<span id="hearts" ></span>
+			<div id="hearts" ></div>
 		</td>
-		<td id="progressTd" rowspan="2">
-			<span id="level"></span>
+		<td id="levelTd" rowspan="2">
+			<div id="level"></div>
 		</td>
 	</tr>
 	<tr>
-	<td>					
+	<td id="progressTd">					
 		<div id="progressContainer" class="progress align-middle" style="display:inline-block; width: 300px">
 			<div id="sucessProgress" class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
 				<span ><span id="id_progress_text"></span> 	לשלב הבא</span>
@@ -32,12 +32,13 @@
 		</td>
 	</tr>
 </table>
-	<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+	<div class="col-4"></div>
+	<button id="btnCollapse" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
        	aria-expanded="false"   aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div  class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto ">
           <li  class="nav-item">
 			<button id="idAiSelect" class="btn btn-outline-success active" type="button" aria-pressed="true">לשחק מול המחשב </button>
@@ -67,7 +68,7 @@
 <div id="GameModal" class="row" role="dialog" aria-labelledby="idModalLabel" aria-hidden="true"
 	 style = "visibility: hidden">
 	<h1 id="circle_h1">המשחק הסתיים</h1>
-	<h5 id="msg"></h5>
+	<h2 id="msg"></h2>
 <!-- ******************************************************************** -->        
 		<div id="HeartCopy"></div>
 		<div id="ProgressCopy"></div>

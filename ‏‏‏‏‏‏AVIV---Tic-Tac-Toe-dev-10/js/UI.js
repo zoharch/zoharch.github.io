@@ -7,6 +7,8 @@ const O = "img/O-Jolle_insigna.png";
 // global 
 //
     var winner = new Object();
+	var levelUpdate = false;
+	var levelMsg = "";
 // 
 //------------------------
 //on load Jquery :
@@ -33,6 +35,7 @@ $(function () {
 });
 function newGame() {
 	moveBack();
+	adaptationToNavbar();
 	restart();
 }
 function progressBarshow(bState) {
@@ -51,6 +54,7 @@ function gameType(event) {
 	// tofggle button
 	if ($(this).attr('aria-pressed')=="true") 
 		return;
+	adaptationToNavbar();
 	$(this).attr('aria-pressed',"true");
 	var id_SyblingButton = $(this).attr('id') == "idFreind" ? "#idAiSelect" : "#idFreind";
 	$(id_SyblingButton)
@@ -58,12 +62,27 @@ function gameType(event) {
 		.removeClass("active");
 	$(this).addClass("active");
 	friend  =  event.data. value;
+	//adapt ui acordingly
+	if (friend==1) {
+		$("#heartTd").css("visibility","hidden");
+		$("#progressTd").css("visibility","hidden");
+	} else {
+		$("#heartTd").css("visibility","visible");
+		$("#progressTd").css("visibility","visible");		
+	}
 	restart();
-//adapt ui acordingly
 }
+function adaptationToNavbar() {
+	//navbar collapse handle
+	if ($("#btnCollapse").attr("aria-expanded")) {
+		$("#btnCollapse").attr("aria-expanded","false").addClass("collapsed");
+		$("#navbarSupportedContent").attr("aria-expanded","false").removeClass("show")
+	}
+}
+
 function hearts_paint(x) {
 	var heart;
-	var h = $("#nav").height()/2;
+//	var h = $("#nav").height()/2;
 	for (var i = 1; i <=x ; i ++ ) {
 		heart = $("<img>");
 		heart
@@ -71,7 +90,7 @@ function hearts_paint(x) {
 			"id" : "heart"	+ i ,
 			'src' : "img/heart1.png"
 				})
-			.css('height',h);
+			.css('height',"5vh");
 	$("#hearts").append(heart);	
 	}
 }
@@ -170,6 +189,7 @@ function restart() {
 	console.log("restart");
 	gameTerminal = "Didn't Start";
 	player = 1;
+	levelUpdate = false;
 	winner.bwin = false;
 	moveCount = 0;
     $('#GameModal').hide();
@@ -182,7 +202,7 @@ function restart() {
 	showLevel();
 }
 function showLevel() {
-	$("#level").html(" רמה " + level);
+	$("#level").html(" רמה " + level + "   ");
 }
 function showGameModal () {
 	console.log("showGameModal");
@@ -190,12 +210,6 @@ function showGameModal () {
 	switch(gameTerminal) {
 		case 'Human win':
 			str = 'כל הכבוד !!  ניצחת !';
-			break;
-		case "level down":
-			str = 'ירדת רמה, עכשיו יהיה קל יותר';
-			break;
-		case "level up":
-			str = 'כל הכבוד, עלית רמה, !!!';
 			break;
 		case 'AI win':
 			str = 'אני ניצחתי.';
@@ -206,6 +220,13 @@ function showGameModal () {
 		default:
 			console.log ('showGameModal Called when the state of the game was: ' + gameTerminal );
 		   }
+	if (levelUpdate) {
+		if (levelMsg > 0) {
+			str = 'כל הכבוד, עלית רמה !!!';
+		} else {
+			str = 'ירדת רמה, עכשיו יהיה קל יותר';	
+		}
+	}
     $("#msg").html(str);
 	//move hearts
 	$("#hearts").appendTo($("#HeartCopy"));
@@ -213,16 +234,16 @@ function showGameModal () {
 		$(this).css("height","10vh");
 		})
 	// copy progress bar
-	$("#progressContainer").appendTo($("#ProgressCopy"))
+$("#progressContainer").appendTo($("#ProgressCopy"))
 	$("#sucessProgress").css({"height": "3vh",
 							  "line-height" : "3vh",
 							 "font-size":"1rem"});
-	
+	if (levelUpdate) {
+		$("#ProgressCopy").hide();
+	}
     $('#GameModal')
 		.css("visibility","visible")
 		.fadeIn(3000);
-	if ((gameTerminal == 'AI win' ||
-		gameTerminal == 'Human win' )&& !friend) {winCounts();}
 }
 
 function moveBack() {

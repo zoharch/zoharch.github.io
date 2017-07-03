@@ -17,7 +17,7 @@ function aiMaster(options) {
 	var bestMove = random;
 	var min;
 	var obj = {};
-	if (moveCount == 1) {
+	if (moveCount == 1 && level >=4) {
 		lastId = $(_lasPos).attr('id').substr(0,3);
 		console.log("_lasPos: "+lastId);
 		switch(lastId) {

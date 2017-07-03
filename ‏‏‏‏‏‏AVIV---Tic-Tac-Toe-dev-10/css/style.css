@@ -1,5 +1,6 @@
 #HeartCopy {
 	z-index: -5;
+	width: 50%;
 }
 #ProgressCopy{
 	direction: rtl;
@@ -29,7 +30,7 @@ opacity: 0;
 #canvas {
 	position: absolute;
 }
-table {
+#progressContainer {
 	direction: rtl;
 }
 td {
@@ -67,9 +68,11 @@ td {
 #newGame{
 	margin-top: 10vh;
 	font-size: 3rem;
+	border-radius: 50%;
+	box-shadow: 2px 2px;
 }
-.my-modal-header h5 {
-	font-size: 2rem;
+.my-modal-header h2 {
+	font-size: 1.5rem;
 }
 .my-modal-footer {
 	direction: ltr;

@@ -5,7 +5,7 @@ var player = 1; /*   -1 -> 'A' for AI moves
 					  2 -> 'H tmp' for AI temporary examination what whould Human whould do.
 					  0 -> 'friend'
 				   */
-var level = 3 ; // AI levels: 1- blind , 2 - novice, 3 - master 
+var level = 1 ; // AI levels: 1- blind , 2 - novice, 3 - master 
 //states of the game are:
 const AmountOfVictoriestoTheNextLevel = 3;
 const AmountOFailurstoGoDownLevel = 3;
@@ -14,6 +14,7 @@ var fail_count = 0;
 var moveCount = 0;
 var amountOfSymbolsForPotentialWining = 2;
 var amountOfSymbolsToWin = 3;
+const MAX_LEVEL = 4;
 
 
 var gameTerminal = "Didn't Start"; /* -1 - "The Game is still running"
@@ -73,7 +74,7 @@ function winCounts() { // Human or AI win
 				"top": "+=5vh", 
 				"left": "+=3vh",
 				"width": "+=100px",
-				"height": "+=100px"}, 5000,function() {
+				"height": "+=100px"}, 2000,function() {
 					$( ".bounceIn" ).toggle( "explode", {pieces: 50 })});
 		}
 	}
@@ -81,20 +82,22 @@ function winCounts() { // Human or AI win
 
 function updateLevel(x) {
 	progressBarInit();
+	levelUpdate = true;
 	if (x>0) {
 		hearts_paint(2); // no limit designed for max hearts.
 		//update modal msg
-		gameTerminal = "level up";
-		if (level<3) {
+		levelMsg = +1;
+		if (level < MAX_LEVEL) {
 			level++;
-			} else {
-				level = 3;
-				progressBarshow(false);
-			}
+		} else {
+			level = MAX_LEVEL;
+			levelUpdate = false;
+			progressBarshow(false);
+		}
 		} else {
 			//update modal msg
-			gameTerminal = "level down";
-			if (level == 3) {
+			levelMsg = -1;
+			if (level == MAX_LEVEL) {
 				progressBarshow(true);
 				} else if (level>1) {
 					level--;
@@ -107,7 +110,7 @@ function makeDecisionsAcordingGameState () {
 	switch (gameTerminal) {
 		case 'Human win':
 		case 'AI win':
-//			if (!friend) {winCounts();}
+			if (!friend) {winCounts();}
 		case 'Freind win':
 			creatCanvas();
 			paint_dash (winner.sequence,winner.no);
@@ -128,6 +131,7 @@ function spotClick() {
 	if ($(this).attr('value')!="0") {
 		return;
 	}
+	adaptationToNavbar();
 	moveCount++;
 	printSymbol(this);
 	_lasPos = this;
@@ -306,4 +310,9 @@ function direction(y, yDir, x, xDir,str,newY,newX) {
 			}
 		}
 	return str;
+}
+
+function testHumanWin() {
+	gameTerminal = 'Human win';
+	makeDecisionsAcordingGameState ();
 }
